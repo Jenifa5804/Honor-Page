@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nelson Mandela - Icon of Freedom</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(45deg, #d32f2f, #f44336, #ff9800);
+            background-size: 400% 400%;
+            animation: freedomFlow 15s ease infinite;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        @keyframes freedomFlow {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 30%, rgba(211, 47, 47, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 70%, rgba(255, 152, 0, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .tribute-container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 25px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        header {
+            background: linear-gradient(135deg, #d32f2f, #f44336, #ff9800);
+            color: #fff;
+            text-align: center;
+            padding: 100px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '✊';
+            position: absolute;
+            font-size: 20rem;
+            top: -60px;
+            right: -60px;
+            opacity: 0.1;
+            animation: justiceFloat 8s ease-in-out infinite;
+        }
+
+        @keyframes justiceFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(10deg); }
+        }
+
+        h1 {
+            font-size: 4.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px rgba(211, 47, 47, 0.5);
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+            background: linear-gradient(45deg, #ffffff, #f44336, #ff9800);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: freedomGlow 2.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes freedomGlow {
+            from { text-shadow: 0 0 20px rgba(211, 47, 47, 0.5); }
+            to { text-shadow: 0 0 30px rgba(255, 152, 0, 0.7), 0 0 40px rgba(255, 152, 0, 0.3); }
+        }
+
+        .subtitle {
+            font-size: 1.6rem;
+            font-style: italic;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .content {
+            padding: 60px 40px;
+        }
+
+        .image-section {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .portrait {
+            width: 350px;
+            height: 450px;
+            background: radial-gradient(circle, #d32f2f, #f44336);
+            border-radius: 20px;
+            margin: 0 auto 25px;
+            box-shadow: 0 0 40px rgba(244, 67, 54, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            border: 3px solid #f44336;
+            position: relative;
+            overflow: hidden;
+        }
+        .portrait-img {
+            width: 500px;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 5%;
+        }
+
+        .portrait::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            animation: hopeScan 3s linear infinite;
+        }
+
+        @keyframes hopeScan {
+            0% { transform: translateX(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) rotate(45deg); }
+        }
+
+        .caption {
+            font-style: italic;
+            color: #666;
+            font-size: 1rem;
+        }
+
+        h2 {
+            color: #d32f2f;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(45deg, #f44336, #ff9800);
+            border-radius: 2px;
+        }
+
+        .bio-text {
+            font-size: 1.2rem;
+            text-align: justify;
+            margin-bottom: 25px;
+            line-height: 1.8;
+            text-indent: 2em;
+        }
+
+        .achievements {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .achievement-card {
+            background: linear-gradient(135deg, #d32f2f, #f44336);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            border: 2px solid transparent;
+            background-clip: padding-box;
+        }
+
+        .achievement-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, #f44336, #ff9800, #ffc107, #f44336);
+            z-index: -1;
+            margin: -2px;
+            border-radius: inherit;
+            animation: uniteBorder 3s linear infinite;
+        }
+
+        @keyframes uniteBorder {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-10px) scale(1.02);
+        }
+
+        .achievement-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .achievement-title {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .achievement-description {
+            font-size: 1rem;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        .legacy-showcase {
+            background: linear-gradient(45deg, #d32f2f, #f44336);
+            color: white;
+            padding: 60px;
+            border-radius: 25px;
+            margin: 50px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .legacy-showcase::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-conic-gradient(from 0deg, transparent 0deg, rgba(244, 67, 54, 0.1) 5deg, transparent 10deg);
+            animation: reconciliation 20s linear infinite;
+        }
+
+        @keyframes reconciliation {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .legacy-showcase h3 {
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .legacy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .legacy-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .legacy-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .legacy-name {
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            color: #ff9800;
+        }
+
+        .quote-section {
+            background: linear-gradient(135deg, #d32f2f, #f44336);
+            color: white;
+            padding: 80px;
+            margin: 50px 0;
+            border-radius: 25px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quote-section::before {
+            content: '"';
+            font-size: 15rem;
+            position: absolute;
+            top: -50px;
+            left: 50px;
+            opacity: 0.1;
+            font-family: serif;
+        }
+
+        .quote {
+            font-size: 1.8rem;
+            font-style: italic;
+            line-height: 1.7;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .timeline {
+            margin: 60px 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 40px;
+            position: relative;
+            align-items: flex-start;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 80px;
+            top: 0;
+            bottom: -40px;
+            width: 3px;
+            background: linear-gradient(to bottom, #f44336, #d32f2f);
+        }
+
+        .timeline-item:last-child::before {
+            display: none;
+        }
+
+        .year {
+            font-weight: bold;
+            font-size: 1.4rem;
+            color: #d32f2f;
+            width: 70px;
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        .year::after {
+            content: '🕊️';
+            position: absolute;
+            right: -20px;
+            top: 5px;
+            font-size: 1.2rem;
+            animation: peacePulse 2s ease-in-out infinite;
+        }
+
+        @keyframes peacePulse {
+            0%, 100% { opacity: 0.7; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.1); }
+        }
+
+        .event {
+            margin-left: 40px;
+            padding: 25px;
+            background: rgba(211, 47, 47, 0.1);
+            border-radius: 15px;
+            flex: 1;
+            border-left: 5px solid #f44336;
+        }
+
+        .event-title {
+            font-weight: bold;
+            color: #d32f2f;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        footer {
+            background: linear-gradient(135deg, #d32f2f, #f44336);
+            color: white;
+            text-align: center;
+            padding: 50px;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3rem;
+            }
+
+            .content {
+                padding: 40px 20px;
+            }
+
+            .portrait {
+                width: 280px;
+                height: 360px;
+            }
+
+            .achievements {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-item {
+                flex-direction: column;
+            }
+
+            .timeline-item::before {
+                display: none;
+            }
+
+            .event {
+                margin-left: 0;
+                margin-top: 15px;
+            }
+
+            .year::after {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="tribute-container">
+            <header>
+                <h1>Nelson Mandela</h1>
+                <p class="subtitle">Anti-Apartheid Revolutionary • President of South Africa • Global Icon of Peace</p>
+            </header>
+
+            <div class="content">
+                <div class="image-section">
+                    <div class="portrait">
+                        <img src="https://karsh.org/wordpress/wp-content/uploads/2017/06/Yousuf-Karsh-Nelson-Mandela-1990-1523x1960.jpg" alt="Nelson-Mandela" class="portrait-img">
+                    </div>
+                    <p class="caption">Nelson Mandela (1918-2013) - The Freedom Fighter Who United a Nation</p>
+                </div>
+
+                <div class="bio-section">
+                    <h2>The Freedom Fighter</h2>
+                    <p class="bio-text">
+                        Nelson Rolihlahla Mandela was a South African anti-apartheid revolutionary, political leader, and philanthropist who served as President of South Africa from 1994 to 1999. He was the country's first black head of state and the first elected in a fully representative democratic election. His government focused on dismantling the legacy of apartheid by tackling institutionalised racism and fostering racial reconciliation.
+                    </p>
+                    <p class="bio-text">
+                        Ideologically an African nationalist and socialist, he served as the president of the African National Congress (ANC) party from 1991 to 1997. Internationally, Mandela was the secretary-general of the Non-Aligned Movement from 1998 to 1999. A Xhosa, Mandela was born into the Thembu royal family in Mvezo, British South Africa. Mandela became an icon of resistance to apartheid and a symbol of the struggle for freedom and human rights worldwide.
+                    </p>
+                </div>
+
+                <div class="achievements">
+                    <div class="achievement-card">
+                        <span class="achievement-icon">🏆</span>
+                        <h3 class="achievement-title">Nobel Peace Prize</h3>
+                        <p class="achievement-description">Awarded the Nobel Peace Prize in 1993 jointly with F.W. de Klerk for their work to end apartheid peacefully.</p>
+                    </div>
+                    <div class="achievement-card">
+                        <span class="achievement-icon">🗳️</span>
+                        <h3 class="achievement-title">Democratic President</h3>
+                        <p class="achievement-description">Became South Africa's first black president in 1994, leading the transition to democracy and majority rule.</p>
+                    </div>
+                    <div class="achievement-card">
+                        <span class="achievement-icon">🤝</span>
+                        <h3 class="achievement-title">Racial Reconciliation</h3>
+                        <p class="achievement-description">Promoted reconciliation and unity between racial groups, preventing civil war and establishing the "Rainbow Nation."</p>
+                    </div>
+                    <div class="achievement-card">
+                        <span class="achievement-icon">📖</span>
+                        <h3 class="achievement-title">Human Rights Advocate</h3>
+                        <p class="achievement-description">Championed human rights globally and became a symbol of justice, equality, and peaceful resistance worldwide.</p>
+                    </div>
+                </div>
+
+                <div class="legacy-showcase">
+                    <h3>Legacy and Impact</h3>
+                    <div class="legacy-grid">
+                        <div class="legacy-item">
+                            <div class="legacy-name">Freedom Charter</div>
+                            <p>Co-authored the Freedom Charter, outlining the vision for a democratic South Africa.</p>
+                        </div>
+                        <div class="legacy-item">
+                            <div class="legacy-name">Truth and Reconciliation</div>
+                            <p>Supported the Truth and Reconciliation Commission to heal the nation's wounds.</p>
+                        </div>
+                        <div class="legacy-item">
+                            <div class="legacy-name">Mandela Foundation</div>
+                            <p>Established foundations focusing on education, health, and rural development.</p>
+                        </div>
+                        <div class="legacy-item">
+                            <div class="legacy-name">Global Inspiration</div>
+                            <p>Inspired civil rights movements and leaders around the world with his message of peace.</p>
+                        </div>
+                        <div class="legacy-item">
+                            <div class="legacy-name">Constitutional Democracy</div>
+                            <p>Helped establish South Africa's new constitution guaranteeing equal rights for all.</p>
+                        </div>
+                        <div class="legacy-item">
+                            <div class="legacy-name">International Statesman</div>
+                            <p>Mediated conflicts and promoted peace in Africa and beyond during his post-presidency.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quote-section">
+                    <p class="quote">"Education is the most powerful weapon which you can use to change the world."</p>
+                    <p style="font-size: 1.2rem;">- Nelson Mandela</p>
+                </div>
+
+                <h2>Journey to Freedom</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="year">1918</div>
+                        <div class="event">
+                            <div class="event-title">Birth in Mvezo</div>
+                            <p>Born into the Thembu royal family in the Eastern Cape of South Africa.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="year">1944</div>
+                        <div class="event">
+                            <div class="event-title">Joins ANC</div>
+                            <p>Joined the African National Congress and co-founded the ANC Youth League.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="year">1955</div>
+                        <div class="event">
+                            <div class="event-title">Freedom Charter</div>
+                            <p>Helped draft the Freedom Charter, envisioning a democratic and equal South Africa.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="year">1964</div>
+                        <div class="event">
+                            <div class="event-title">Rivonia Trial</div>
+                            <p>Sentenced to life imprisonment for sabotage and conspiracy to overthrow the state.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="year">1990</div>
+                        <div class="event">
+                            <div class="event-title">Release from Prison</div>
+                            <p>Released after 27 years in prison, becoming a global symbol of freedom and justice.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="year">1993</div>
+                        <div class="event">
+                            <div class="event-title">Nobel Peace Prize</div>
+                            <p>Awarded Nobel Peace Prize with F.W. de Klerk for their efforts to end apartheid peacefully.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="year">1994</div>
+                        <div class="event">
+                            <div class="event-title">Elected President</div>
+                            <p>Became South Africa's first black president in the country's first fully democratic elections.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="year">1999</div>
+                        <div class="event">
+                            <div class="event-title">Peaceful Transition</div>
+                            <p>Stepped down as president, completing a peaceful transition and focusing on humanitarian work.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="year">2013</div>
+                        <div class="event">
+                            <div class="event-title">Global Legacy</div>
+                            <p>Passed away at age 95, leaving behind a legacy of peace, reconciliation, and human dignity.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer>
+                <p>&copy; 2024 Mandela Tribute Page. Honoring the leader who chose reconciliation over revenge.</p>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

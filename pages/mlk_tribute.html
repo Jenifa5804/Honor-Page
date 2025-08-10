@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Martin Luther King Jr. - Champion of Civil Rights</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #2c5530, #3e7b3e, #8b4513, #daa520);
+            background-size: 400% 400%;
+            animation: freedom 25s ease infinite;
+            min-height: 100vh;
+        }
+
+        @keyframes freedom {
+            0%, 100% { background-position: 0% 50%; }
+            25% { background-position: 100% 0%; }
+            50% { background-position: 100% 100%; }
+            75% { background-position: 0% 100%; }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .tribute-container {
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(20px);
+            border-radius: 25px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            border: 2px solid rgba(218, 165, 32, 0.3);
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c5530, #1a472a, #0d2818);
+            color: #fff;
+            text-align: center;
+            padding: 100px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '✊';
+            position: absolute;
+            font-size: 18rem;
+            top: -50px;
+            right: -50px;
+            opacity: 0.1;
+            animation: rise 4s ease-in-out infinite;
+        }
+
+        @keyframes rise {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        h1 {
+            font-size: 4.5rem;
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+            background: linear-gradient(45deg, #daa520, #ffd700, #ffffe0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 1.6rem;
+            font-style: italic;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+            margin-bottom: 10px;
+        }
+
+        .dates {
+            font-size: 1.2rem;
+            opacity: 0.8;
+            position: relative;
+            z-index: 1;
+        }
+
+        .content {
+            padding: 60px 40px;
+        }
+
+        .image-section {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .portrait {
+            width: 350px;
+            height: 450px;
+            background: linear-gradient(135deg, #2c5530, #1a472a);
+            border-radius: 20px;
+            margin: 0 auto 25px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            border: 5px solid #daa520;
+            position: relative;
+            overflow: hidden;
+        }
+        .portrait-img {
+            width: 500px;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 10%;
+        }
+
+        .portrait::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 40% 40%, rgba(218, 165, 32, 0.3), transparent 60%);
+        }
+
+        .caption {
+            font-style: italic;
+            color: #666;
+            font-size: 1rem;
+        }
+
+        h2 {
+            color: #2c5530;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 4px;
+            background: linear-gradient(45deg, #2c5530, #daa520);
+            border-radius: 2px;
+        }
+
+        .bio-text {
+            font-size: 1.2rem;
+            text-align: justify;
+            margin-bottom: 25px;
+            line-height: 1.8;
+            text-indent: 2em;
+        }
+
+        .principles {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .principle-card {
+            background: linear-gradient(135deg, rgba(44, 85, 48, 0.1), rgba(218, 165, 32, 0.1));
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            border: 3px solid #2c5530;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .principle-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(218, 165, 32, 0.2), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .principle-card:hover::before {
+            left: 100%;
+        }
+
+        .principle-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(44, 85, 48, 0.2);
+        }
+
+        .principle-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .principle-title {
+            font-size: 1.4rem;
+            color: #2c5530;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .principle-description {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .famous-speech {
+            background: linear-gradient(45deg, #2c5530, #1a472a);
+            color: white;
+            padding: 60px;
+            border-radius: 25px;
+            margin: 50px 0;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .famous-speech::before {
+            content: '🎤';
+            position: absolute;
+            font-size: 12rem;
+            top: -40px;
+            left: -40px;
+            opacity: 0.1;
+        }
+
+        .famous-speech h3 {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .speech-excerpt {
+            font-size: 1.4rem;
+            font-style: italic;
+            line-height: 1.7;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .quote-section {
+            background: linear-gradient(135deg, #daa520, #b8860b);
+            color: white;
+            padding: 80px;
+            margin: 50px 0;
+            border-radius: 25px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quote-section::before {
+            content: '"';
+            font-size: 15rem;
+            position: absolute;
+            top: -50px;
+            left: 50px;
+            opacity: 0.2;
+            font-family: serif;
+        }
+
+        .quote {
+            font-size: 1.8rem;
+            font-style: italic;
+            line-height: 1.7;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .timeline {
+            margin: 60px 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 40px;
+            position: relative;
+            align-items: flex-start;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 80px;
+            top: 0;
+            bottom: -40px;
+            width: 4px;
+            background: linear-gradient(to bottom, #2c5530, #daa520);
+        }
+
+        .timeline-item:last-child::before {
+            display: none;
+        }
+
+        .year {
+            font-weight: bold;
+            font-size: 1.4rem;
+            color: #2c5530;
+            width: 70px;
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        .year::after {
+            content: '✊';
+            position: absolute;
+            right: -20px;
+            top: 8px;
+            font-size: 1.2rem;
+            color: #daa520;
+        }
+
+        .event {
+            margin-left: 40px;
+            padding: 25px;
+            background: rgba(44, 85, 48, 0.1);
+            border-radius: 15px;
+            flex: 1;
+            border-left: 5px solid #2c5530;
+        }
+
+        .event-title {
+            font-weight: bold;
+            color: #2c5530;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        footer {
+            background: linear-gradient(135deg, #2c5530, #1a472a);
+            color: white;
+            text-align: center;
+            padding: 50px;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3rem;
+            }
+
+            .content {
+                padding: 40px 20px;
+            }
+
+            .portrait {
+                width: 280px;
+                height: 360px;
+            }
+
+            .principles {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-item {
+                flex-direction: column;
+            }
+
+            .timeline-item::before {
+                display: none;
+            }
+
+            .event {
+                margin-left: 0;
+                margin-top: 15px;
+            }
+
+            .year::after {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="tribute-container">
+            <header>
+                <h1>Martin Luther King Jr.</h1>
+                <p class="subtitle">Champion of Civil Rights • Leader of Change • Voice of Justice</p>
+                <p class="dates">1929 - 1968</p>
+            </header>
+
+            <div class="content">
+                <div class="image-section">
+                    <div class="portrait">
+                        <img src="https://cdn.mos.cms.futurecdn.net/N8R3gbds4A8UJ3kS4Pvj4j-970-80.jpg" alt="Martin Luther King " class="portrait-img">
+                    </div>
+                    <p class="caption">Martin Luther King Jr. - "I Have a Dream"</p>
+                </div>
+
+                <div class="bio-section">
+                    <h2>A Leader for Justice</h2>
+                    <p class="bio-text">
+                        Martin Luther King Jr. was an American Baptist minister and activist who became the most visible spokesperson and leader in the American civil rights movement from 1955 until his assassination in 1968. King advanced civil rights through nonviolence and civil disobedience, inspired by his Christian beliefs and the nonviolent activism of Mahatma Gandhi.
+                    </p>
+                    <p class="bio-text">
+                        King led the 1955 Montgomery bus boycott and later became the first president of the Southern Christian Leadership Conference (SCLC). With the SCLC, he led an unsuccessful struggle against segregation in Albany, Georgia, and helped organize the nonviolent 1963 protests in Birmingham, Alabama. His leadership and powerful oratory skills helped bring about landmark legislation including the Civil Rights Act of 1964 and the Voting Rights Act of 1965.
+                    </p>
+                </div>
+
+                <div class="principles">
+                    <div class="principle-card">
+                        <span class="principle-icon">☮️</span>
+                        <h3 class="principle-title">Nonviolent Resistance</h3>
+                        <p class="principle-description">Championed peaceful protest and civil disobedience as the most powerful tools for social change, inspired by Gandhi's philosophy.</p>
+                    </div>
+                    <div class="principle-card">
+                        <span class="principle-icon">⚖️</span>
+                        <h3 class="principle-title">Equal Justice</h3>
+                        <p class="principle-description">Fought tirelessly for equal rights and opportunities for all people, regardless of race, color, or background.</p>
+                    </div>
+                    <div class="principle-card">
+                        <span class="principle-icon">🤝</span>
+                        <h3 class="principle-title">Unity & Brotherhood</h3>
+                        <p class="principle-description">Envisioned a world where people of all races could live together in harmony and mutual respect.</p>
+                    </div>
+                    <div class="principle-card">
+                        <span class="principle-icon">🙏</span>
+                        <h3 class="principle-title">Love Over Hate</h3>
+                        <p class="principle-description">Believed that love and forgiveness were more powerful than hatred and revenge in creating lasting change.</p>
+                    </div>
+                </div>
+
+                <div class="famous-speech">
+                    <h3>"I Have a Dream" Speech</h3>
+                    <p class="speech-excerpt">
+                        Delivered on August 28, 1963, during the March on Washington for Jobs and Freedom, 
+                        this iconic speech articulated King's vision of racial harmony and equality. 
+                        Spoken before 250,000 people at the Lincoln Memorial, it became one of the 
+                        most influential speeches in American history.
+                    </p>
+                </div>
+
+                <div class="quote-section">
+                    <p class="quote">
+                        "Darkness cannot drive out darkness; only light can do that. Hate cannot drive out hate; only love can do that."
+                    </p>
+                    <p class="quote-author">— Martin Luther King Jr.</p>
+                </div>
+
+                <div class="timeline">
+                    <h2>Journey of Leadership</h2>
+                    <div class="timeline-item">
+                        <div class="year">1929</div>
+                        <div class="event">
+                            <div class="event-title">Born in Atlanta</div>
+                            <p>Born Michael King Jr. in Atlanta, Georgia, to a family of Baptist ministers</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">1948</div>
+                        <div class="event">
+                            <div class="event-title">Theological Education</div>
+                            <p>Graduated from Morehouse College and entered Crozer Seminary</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">1955</div>
+                        <div class="event">
+                            <div class="event-title">Montgomery Bus Boycott</div>
+                            <p>Led the 381-day boycott that ended bus segregation in Montgomery, Alabama</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">1957</div>
+                        <div class="event">
+                            <div class="event-title">SCLC Formation</div>
+                            <p>Founded the Southern Christian Leadership Conference to coordinate civil rights activities</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">1963</div>
+                        <div class="event">
+                            <div class="event-title">March on Washington</div>
+                            <p>Delivered the famous "I Have a Dream" speech to 250,000 people</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">1964</div>
+                        <div class="event">
+                            <div class="event-title">Nobel Peace Prize</div>
+                            <p>Became the youngest person to receive the Nobel Peace Prize at age 35</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">1965</div>
+                        <div class="event">
+                            <div class="event-title">Selma to Montgomery</div>
+                            <p>Led historic marches that resulted in the Voting Rights Act of 1965</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">1968</div>
+                        <div class="event">
+                            <div class="event-title">Eternal Legacy</div>
+                            <p>Assassinated in Memphis, but his dream of equality continues to inspire movements worldwide</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer>
+                <p>
+                    Martin Luther King Jr.'s legacy extends far beyond the civil rights movement. 
+                    His philosophy of nonviolent resistance, his dream of equality, and his message of love over hate 
+                    continue to inspire social justice movements around the world. His life reminds us that 
+                    one person's courage and conviction can indeed change the course of history.
+                </p>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

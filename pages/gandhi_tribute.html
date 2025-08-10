@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahatma Gandhi - Father of Non-Violence</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(45deg, #f97316, #fb923c, #fbbf24);
+            background-size: 400% 400%;
+            animation: peacefulFlow 20s ease infinite;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        @keyframes peacefulFlow {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 30%, rgba(34, 197, 94, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 70%, rgba(249, 115, 22, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .tribute-container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 25px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        header {
+            background: linear-gradient(135deg, #f97316, #22c55e, #fbbf24);
+            color: #fff;
+            text-align: center;
+            padding: 100px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '🕊️';
+            position: absolute;
+            font-size: 20rem;
+            top: -60px;
+            right: -60px;
+            opacity: 0.1;
+            animation: doveFloat 6s ease-in-out infinite;
+        }
+
+        @keyframes doveFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        h1 {
+            font-size: 4.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px rgba(249, 115, 22, 0.5);
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+            background: linear-gradient(45deg, #ffffff, #22c55e, #f97316);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: peacefulGlow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes peacefulGlow {
+            from { text-shadow: 0 0 20px rgba(249, 115, 22, 0.5); }
+            to { text-shadow: 0 0 30px rgba(34, 197, 94, 0.7), 0 0 40px rgba(34, 197, 94, 0.3); }
+        }
+
+        .subtitle {
+            font-size: 1.6rem;
+            font-style: italic;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .content {
+            padding: 60px 40px;
+        }
+
+        .image-section {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .portrait {
+            width: 350px;
+            height: 450px;
+            background: radial-gradient(circle, #f97316, #22c55e);
+            border-radius: 20px;
+            margin: 0 auto 25px;
+            box-shadow: 0 0 40px rgba(249, 115, 22, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            border: 3px solid #22c55e;
+            position: relative;
+            overflow: hidden;
+        }
+        .portrait-img {
+            width: 500px;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 10%;
+        }
+
+
+        .portrait::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            animation: gentleLight 4s linear infinite;
+        }
+
+        @keyframes gentleLight {
+            0% { transform: translateX(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) rotate(45deg); }
+        }
+
+        .caption {
+            font-style: italic;
+            color: #666;
+            font-size: 1rem;
+        }
+
+        h2 {
+            color: #f97316;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(45deg, #22c55e, #f97316);
+            border-radius: 2px;
+        }
+
+        .bio-text {
+            font-size: 1.2rem;
+            text-align: justify;
+            margin-bottom: 25px;
+            line-height: 1.8;
+            text-indent: 2em;
+        }
+
+        .achievements {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .achievement-card {
+            background: linear-gradient(135deg, #f97316, #22c55e);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            border: 2px solid transparent;
+            background-clip: padding-box;
+        }
+
+        .achievement-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, #fbbf24, #22c55e, #f97316, #fbbf24);
+            z-index: -1;
+            margin: -2px;
+            border-radius: inherit;
+            animation: satyagrahaBorder 5s linear infinite;
+        }
+
+        @keyframes satyagrahaBorder {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-10px) scale(1.02);
+        }
+
+        .achievement-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .achievement-title {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .achievement-description {
+            font-size: 1rem;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        .movements-showcase {
+            background: linear-gradient(45deg, #22c55e, #f97316);
+            color: white;
+            padding: 60px;
+            border-radius: 25px;
+            margin: 50px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .movements-showcase::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-conic-gradient(from 0deg, transparent 0deg, rgba(255, 255, 255, 0.1) 5deg, transparent 10deg);
+            animation: charkhaRotate 30s linear infinite;
+        }
+
+        @keyframes charkhaRotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .movements-showcase h3 {
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .movement-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .movement-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .movement-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .movement-name {
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            color: #fbbf24;
+        }
+
+        .quote-section {
+            background: linear-gradient(135deg, #22c55e, #fbbf24);
+            color: white;
+            padding: 80px;
+            margin: 50px 0;
+            border-radius: 25px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quote-section::before {
+            content: '"';
+            font-size: 15rem;
+            position: absolute;
+            top: -50px;
+            left: 50px;
+            opacity: 0.1;
+            font-family: serif;
+        }
+
+        .quote {
+            font-size: 1.8rem;
+            font-style: italic;
+            line-height: 1.7;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .timeline {
+            margin: 60px 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 40px;
+            position: relative;
+            align-items: flex-start;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 80px;
+            top: 0;
+            bottom: -40px;
+            width: 3px;
+            background: linear-gradient(to bottom, #22c55e, #f97316);
+        }
+
+        .timeline-item:last-child::before {
+            display: none;
+        }
+
+        .year {
+            font-weight: bold;
+            font-size: 1.4rem;
+            color: #f97316;
+            width: 70px;
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        .year::after {
+            content: '🕊️';
+            position: absolute;
+            right: -20px;
+            top: 5px;
+            font-size: 1.2rem;
+            animation: peacePulse 3s ease-in-out infinite;
+        }
+
+        @keyframes peacePulse {
+            0%, 100% { opacity: 0.7; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.1); }
+        }
+
+        .event {
+            margin-left: 40px;
+            padding: 25px;
+            background: rgba(249, 115, 22, 0.1);
+            border-radius: 15px;
+            flex: 1;
+            border-left: 5px solid #22c55e;
+        }
+
+        .event-title {
+            font-weight: bold;
+            color: #f97316;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        footer {
+            background: linear-gradient(135deg, #f97316, #22c55e);
+            color: white;
+            text-align: center;
+            padding: 50px;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3rem;
+            }
+
+            .content {
+                padding: 40px 20px;
+            }
+
+            .portrait {
+                width: 280px;
+                height: 360px;
+            }
+
+            .achievements {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-item {
+                flex-direction: column;
+            }
+
+            .timeline-item::before {
+                display: none;
+            }
+
+            .event {
+                margin-left: 0;
+                margin-top: 15px;
+            }
+
+            .year::after {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="tribute-container">
+            <header>
+                <h1>Mahatma Gandhi</h1>
+                <p class="subtitle">Father of Non-Violence • Champion of Truth • Leader of Independence</p>
+            </header>
+
+            <div class="content">
+                <div class="image-section">
+                    <div class="portrait">
+                        <img src="https://tse1.mm.bing.net/th/id/OIP.2e_p1SpUE3YkRlMx_Vav5QHaKR?pid=Api&P=0&h=180" alt="gandhi" class="portrait-img">
+                    </div>
+                    <p class="caption">Mahatma Gandhi (1869-1948) - The Great Soul Who Changed the World Through Peace</p>
+                </div>
+
+                <div class="bio-section">
+                    <h2>The Apostle of Non-Violence</h2>
+                    <p class="bio-text">
+                        Mohandas Karamchand Gandhi, known as Mahatma Gandhi, was an Indian lawyer, anti-colonial nationalist, and political ethicist who employed nonviolent resistance to lead the successful campaign for India's independence from British rule. His philosophy of satyagraha (truth-force) and ahimsa (non-violence) inspired civil rights and freedom movements across the world.
+                    </p>
+                    <p class="bio-text">
+                        Born in British-ruled India, Gandhi first employed nonviolent civil disobedience as an expatriate lawyer in South Africa. Upon returning to India, he organized peasants, farmers, and urban laborers to protest excessive land-tax and discrimination. Leading the Indian National Congress, Gandhi championed the cause of independence through peaceful resistance, fasting, and civil disobedience, proving that moral force could triumph over physical force.
+                    </p>
+                </div>
+
+                <div class="achievements">
+                    <div class="achievement-card">
+                        <span class="achievement-icon">🇮🇳</span>
+                        <h3 class="achievement-title">Indian Independence</h3>
+                        <p class="achievement-description">Led India to independence from British colonial rule through non-violent civil disobedience, inspiring freedom movements worldwide.</p>
+                    </div>
+                    <div class="achievement-card">
+                        <span class="achievement-icon">✊</span>
+                        <h3 class="achievement-title">Satyagraha Philosophy</h3>
+                        <p class="achievement-description">Developed the concept of satyagraha (truth-force), demonstrating that non-violent resistance could overcome oppression and injustice.</p>
+                    </div>
+                    <div class="achievement-card">
+                        <span class="achievement-icon">⚖️</span>
+                        <h3 class="achievement-title">Civil Rights Pioneer</h3>
+                        <p class="achievement-description">Fought against racial discrimination in South Africa and caste discrimination in India, advocating for equality and human dignity.</p>
+                    </div>
+                    <div class="achievement-card">
+                        <span class="achievement-icon">🌍</span>
+                        <h3 class="achievement-title">Global Inspiration</h3>
+                        <p class="achievement-description">Influenced civil rights leaders like Martin Luther King Jr. and Nelson Mandela, spreading the message of non-violent resistance globally.</p>
+                    </div>
+                </div>
+
+                <div class="movements-showcase">
+                    <h3>Historic Movements & Campaigns</h3>
+                    <div class="movement-grid">
+                        <div class="movement-item">
+                            <div class="movement-name">Salt March (1930)</div>
+                            <p>240-mile march to the sea to protest British salt monopoly</p>
+                        </div>
+                        <div class="movement-item">
+                            <div class="movement-name">Quit India Movement</div>
+                            <p>Mass civil disobedience demanding immediate independence</p>
+                        </div>
+                        <div class="movement-item">
+                            <div class="movement-name">Non-Cooperation Movement</div>
+                            <p>Boycott of British goods, institutions, and honors</p>
+                        </div>
+                        <div class="movement-item">
+                            <div class="movement-name">Champaran Satyagraha</div>
+                            <p>First major success against indigo plantation exploitation</p>
+                        </div>
+                        <div class="movement-item">
+                            <div class="movement-name">Khilafat Movement</div>
+                            <p>Hindu-Muslim unity in supporting Ottoman Caliphate</p>
+                        </div>
+                        <div class="movement-item">
+                            <div class="movement-name">Temple Entry Movement</div>
+                            <p>Campaign against untouchability and caste discrimination</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quote-section">
+                    <p class="quote">
+                        "Be the change that you wish to see in the world. In a gentle way, you can shake the world."
+                    </p>
+                    <p class="quote-author">— Mahatma Gandhi</p>
+                </div>
+
+                <div class="timeline">
+                    <h2>Life & Movement Timeline</h2>
+                    <div class="timeline-item">
+                        <div class="year">1869</div>
+                        <div class="event">
+                            <div class="event-title">Birth in India</div>
+                            <p>Born in Porbandar, Gujarat, into a Hindu merchant family</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">1893</div>
+                        <div class="event">
+                            <div class="event-title">Journey to South Africa</div>
+                            <p>Traveled to South Africa as a lawyer, experienced racial discrimination</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">1906</div>
+                        <div class="event">
+                            <div class="event-title">First Satyagraha</div>
+                            <p>Launched first non-violent resistance campaign in South Africa</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">1915</div>
+                        <div class="event">
+                            <div class="event-title">Return to India</div>
+                            <p>Returned to India and joined the Indian National Congress</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">1930</div>
+                        <div class="event">
+                            <div class="event-title">Salt March</div>
+                            <p>Led the historic 240-mile march to protest British salt monopoly</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">1942</div>
+                        <div class="event">
+                            <div class="event-title">Quit India Movement</div>
+                            <p>Launched the final major campaign for Indian independence</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">1947</div>
+                        <div class="event">
+                            <div class="event-title">Independence & Partition</div>
+                            <p>India gained independence but was partitioned, causing communal violence</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">1948</div>
+                        <div class="event">
+                            <div class="event-title">Eternal Legacy</div>
+                            <p>Assassinated while working for communal harmony, but his message lives on</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer>
+                <p>
+                    Mahatma Gandhi proved that the greatest victories can be won without violence, that truth and 
+                    moral courage are more powerful than armies and weapons. His philosophy of non-violence and 
+                    civil disobedience has inspired countless freedom fighters and social reformers around the world. 
+                    From Martin Luther King Jr.'s civil rights movement to Nelson Mandela's fight against apartheid, 
+                    Gandhi's principles continue to guide those who seek justice and equality. His life reminds us 
+                    that ordinary people can achieve extraordinary change through dedication to truth and non-violence.
+                </p>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
